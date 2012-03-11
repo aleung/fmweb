@@ -1,22 +1,20 @@
-# FMC (FMD Client)
+# FMWeb (FMD Web Based Client)
 
-Basic CLI client and web based client for [FMD](https://github.com/hzqtc/fmd). Just like MPC for MPD.
+Web based client for [FMD](https://github.com/hzqtc/fmd).
 
-## Command Line
+<img src="http://goo.gl/cxVT7" style="border:1px solid black"/>&nbsp;&nbsp;&nbsp;<img src="http://goo.gl/iEhYo" style="border:1px solid black"/>
 
-	python2 fmc.py [options] [command]
+## Install and Run
 
-Options: -a for FMD address, -p for FMD port.
+Python and web.py is required to run this web based client.
 
-Command: one of "play", "stop", "skip", "ban", "rate", "unrate" and "info".
-
-## Web UI
-
-Run FMD web based client: 
+### Run standalone: 
 
 	python2 webfmc.py [port]
 
 Access on web browser by adress `http://<host>:<port>/webfmc/`
 
-Web.py is required to run this web based client. You may also want to install it with lighttpd or Apache, please read [web.py install guide](http://webpy.org/install) for help.
+### Run on lighttpd or Apache
+
+Please read [web.py install guide](http://webpy.org/install) for help.
 
