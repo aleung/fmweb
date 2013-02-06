@@ -1,6 +1,6 @@
 # FMWeb (FMD Web Based Client)
 
-Web based client for [FMD](https://github.com/hzqtc/fmd).
+Web based client for [FMD-python](https://github.com/aleung/fmd/tree/fmd-python).
 
 <img src="http://goo.gl/cxVT7" style="border:1px solid black"/>&nbsp;&nbsp;&nbsp;<img src="http://goo.gl/iEhYo" style="border:1px solid black"/>
 
