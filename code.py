@@ -3,17 +3,20 @@
 import web
 import socket
 import json
+import os
 
 # Default configuration, modify them to map your FMD setting.
 fmd_addr = 'localhost'
 fmd_port = 10098
 
 urls = (
-	'/fmweb/static/(.*)', 'Static',
-	'/fmweb/(.*)', 'WebUI',
-	'(.*)', 'Error',
+	'/static/(.*)', 'Static',
+	'/?(.*)', 'WebUI',
 )
 app = web.application(urls, globals())
+application = app.wsgifunc()
+
+root = os.path.dirname(__file__) 
 
 class Error:
 	def GET(self, path):
@@ -23,7 +26,7 @@ class Static:
     def GET(self, file):
         try:
             web.header('Cache-Control', 'max-age=2592000')
-            f = open('static/'+file, 'r')
+            f = open(os.path.join(root, 'static/', file), 'r')
             return f.read()
         except:
             return '' # you can send an 404 error here if you want
@@ -33,7 +36,7 @@ class WebUI:
 		if cmd == '':
 			cmd = 'info'
 		result = self.runcmd(cmd)
-		render = web.template.render('.')
+		render = web.template.render(os.path.join(root, 'template/'))
 		return render.index(result)
 
 	def runcmd(self, cmd):
