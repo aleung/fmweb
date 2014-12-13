@@ -19,7 +19,7 @@ function progress() {
 	var bar = document.getElementById("progressbar").childNodes[0]
 	var currentProgress = (new Date().getTime() - timeAtLoad)/1000 + progressAtLoad
 	bar.style.width = currentProgress/songLength*100 + '%'
-	if (currentProgress > songLength)
+	if (currentProgress > songLength + 1)
 		reload()
 }
 </script>
